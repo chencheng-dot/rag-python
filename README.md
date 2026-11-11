@@ -1,5 +1,7 @@
 # 基于 pgvector 的 RAG 知识库问答服务
 
+简体中文 | [English](README.en.md)
+
 一个可以直接跑起来的最小可用 RAG 服务：文档清洗 → 切片 → 向量化入库 → 问题改写 → 欧氏距离检索 → 重排 → 带引用生成答案。全流程用 LangChain 官方组件拼装，向量库只要一个 Docker 容器（PostgreSQL + pgvector），不需要额外部署检索服务。
 
 ## 特性
@@ -223,3 +225,8 @@ docker-compose.yml   pgvector 容器
 **5432 端口被占用**：改 `docker-compose.yml` 的端口映射与 `.env` 的 `PG_PORT` 为同一值即可。
 
 **按段落切结果和按字数一样**：检查清洗后的正文是否还有空行——空行是 `paragraph` 模式的唯一边界。
+
+## 许可
+
+[MIT](LICENSE)
+
